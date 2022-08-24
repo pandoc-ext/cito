@@ -1,0 +1,5 @@
+input-files: ["test/input.md"]
+to: markdown
+standalone: true
+filters:
+  - {type: lua, path: cito.lua}
