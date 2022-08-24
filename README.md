@@ -4,9 +4,9 @@ This filter extracts optional CiTO (Citation Typing Ontology)
 information from citations and stores the information in the
 document's metadata. The extracted info is intended to be used in
 combination with other filters, templates, or custom writers. It
-is mandatory to run pandoc-citeproc *after* this filter if CiTO
-data is embedded in the document; otherwise pandoc-citeproc will
-interpret CiTO properties as part of the citation ID.
+is mandatory to run citeproc *after* this filter if CiTO data is
+embedded in the document; otherwise citeproc will interpret CiTO
+properties as part of the citation ID.
 
 ## Using the Citation Typing Ontology
 
@@ -76,7 +76,7 @@ together with the aliases that can be used as shorthands.
 Note that the [pandoc-crossref] filter uses citations to link to
 other elements. The crossref extensions are not understood by
 cito.lua. pandoc-crossref, if used, should always be invoked
-first: `pandoc --lua-filter=cito.lua --filter=pandoc-crossref …`
+first: `pandoc --filter=pandoc-crossref --lua-filter=cito.lua …`
 
 [pandoc-crossref]: https://lierdakil.github.io/pandoc-crossref/
 
