@@ -23,6 +23,14 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        pandoc:
+          - edge
+          - latest
+            # This should be the oldest version that's supported
+            # - 2.19.2
 
     steps:
       - name: Checkout
@@ -33,4 +41,4 @@ jobs:
           # Use docker image with current release.
           make test \
             PANDOC="docker run --rm --volume $(pwd):/data \
-              --user $(id -u):$(id -g) pandoc/core:latest"
+              --user $(id -u):$(id -g) pandoc/core:${{ matrix.pandoc }}"
