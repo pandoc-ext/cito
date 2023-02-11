@@ -5,37 +5,90 @@
 
 local _version = '1.0.0'
 local properties_and_aliases = {
-  agrees_with = {
-    'agree_with'
+  agreesWith = {
+    'agreeWith',
+    'agree_with',
+    'agrees_with',
   },
   citation = {
   },
   cites = {
   },
-  cites_as_authority = {
+  citesAsAuthority = {
+    'asAuthority',
+    'cites_as_authority',
     'as_authority',
     'authority'
   },
-  cites_as_data_source = {
+  citesAsDataSource = {
+    "asDataSource",
+    "dataSource",
+    'cites_as_data_source',
     "as_data_source",
     "data_source"
   },
-  cites_as_evidence = {
+  citesAsEvidence = {
+    'asEvidence',
+    'cites_as_evidence',
     'as_evidence',
     'evidence'
   },
-  cites_as_metadata_document = {
+  citesAsMetadataDocument = {
+    'asMetadataDocument',
+    'metadataDocument',
+    'cites_as_metadata_document',
     'as_metadata_document',
     'metadata_document',
     'metadata'
   },
-  cites_as_recommended_reading = {
+  citesAsPotentialSolution = {
+    'cites_as_potential_solution',
+    'potentialSolution',
+    'potential_solution',
+    'solution'
+  },
+  citesAsRecommendedReading = {
+    'asRecommendedReading',
+    'recommendedReading',
+    'cites_as_recommended_reading',
     'as_recommended_reading',
     'recommended_reading'
   },
-  disagrees_with = {
+  citesAsRelated = {
+    'cites_as_related',
+    'related',
+  },
+  citesAsSourceDocument = {
+    'cites_as_source_document',
+    'sourceDocument',
+    'source_document'
+  },
+  citesForInformation = {
+    'cites_for_information',
+    'information',
+  },
+  compiles = {
+  },
+  confirms = {
+  },
+  containsAssertionFrom = {
+  },
+  corrects = {
+  },
+  credits = {
+  },
+  critiques = {
+  },
+  derides = {
+  },
+  describes = {
+  },
+  disagreesWith = {
+    'disagrees_with',
     'disagree',
     'disagrees'
+  },
+  discusses = {
   },
   disputes = {
   },
@@ -43,29 +96,65 @@ local properties_and_aliases = {
   },
   extends = {
   },
-  includes_excerpt_from = {
+  includesExcerptFrom = {
+    'excerptFrom',
     'excerpt',
-    'excerpt_from'
+    'excerpt_from',
+    'includes_excerpt_from',
   },
-  includes_quotation_from = {
+  includesQuotationFrom = {
+    'quotationFrom',
+    'includes_quotation_from',
     'quotation',
     'quotation_from'
   },
-  obtains_background_from = {
+  linksTo = {
+    'links_to',
+    'link'
+  },
+  obtainsBackgroundFrom = {
+    'backgroundFrom',
+    'obtains_background_from',
     'background',
     'background_from'
   },
+  providesDataFor = {
+  },
+  obtainsSupportFrom = {
+  },
+  qualifies = {
+  },
+  parodies = {
+  },
   refutes = {
   },
-  replies_to = {
+  repliesTo = {
+    'replies_to',
+  },
+  retracts = {
+  },
+  reviews = {
+  },
+  ridicules = {
+  },
+  speculatesOn = {
+  },
+  supports = {
   },
   updates = {
   },
-  uses_data_from = {
+  usesConclusionsFrom = {
+    'uses_conclusions_from'
+  },
+  usesDataFrom = {
+    'dataFrom',
+    'uses_data_from',
     'data',
     'data_from'
   },
-  uses_method_in = {
+  usesMethodIn = {
+    'methodIn',
+    'uses_method_in',
     'method',
     'method_in'
   },
