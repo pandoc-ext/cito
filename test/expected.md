@@ -1,8 +1,8 @@
 ---
 cito_cites:
-  cites_as_evidence:
+  citesAsEvidence:
   - Li95
-  cites_as_recommended_reading:
+  citesAsRecommendedReading:
   - Upper_writers_1974
 ---
 
