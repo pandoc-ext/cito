@@ -4,7 +4,7 @@
 -- This library is free software; you can redistribute it and/or modify it
 -- under the terms of the MIT license. See LICENSE for details.
 
-local _version = '1.0.0'
+local _version = '1.1.0'
 local properties_and_aliases = {
   agreesWith = {
     'agreeWith',
@@ -203,26 +203,31 @@ end
 --- add it to the given collection table.
 local function extract_cito (cito_cites)
   return function (cite)
-    for k, citation in pairs(cite.citations) do
+    local placeholder = cite.content
+    for _, citation in pairs(cite.citations) do
       local cito_prop, cite_id = split_cito_from_id(citation.id)
       store_cito(cito_cites, cito_prop, cite_id)
+      cite.content = cite.content:walk {
+        -- replace in placeholder
+        Str = function (str)
+          return str.text:gsub(citation.id, cite_id)
+        end
+      }
       citation.id = cite_id
     end
+
     return cite
   end
 end
 
---- Lists of citation IDs, indexed by CiTO properties.
-local citations_by_property = {}
-
 return {
   {
-    Cite = extract_cito(citations_by_property)
-  },
-  {
-    Meta = function (meta)
-      meta.cito_cites = citations_by_property
-      return meta
+    Pandoc = function (doc)
+      --- Lists of citation IDs, indexed by CiTO properties.
+      local citations_by_property = {}
+      doc = doc:walk{Cite = extract_cito(citations_by_property)}
+      doc.meta.cito_cites = citations_by_property
+      return doc
     end
   }
 }
