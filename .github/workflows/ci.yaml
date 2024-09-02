@@ -40,7 +40,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: apk add make
+        run: apk add luarocks5.4 make
+
+      - name: Install perevir
+        run: luarocks-5.4 install perevir
 
       - name: Test
-        run: make test
+        run: |
+          eval $(luarocks-5.4 path)
+          make test
